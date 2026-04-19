@@ -8,7 +8,7 @@ Permite agregar productos y visualizar la lista mediante un menú interactivo.
 ## 🎯 Objetivo
 
 Aplicar los conceptos vistos en clase:
-
+* Pilas
 * Variables
 * Listas
 * Funciones (`def`)
