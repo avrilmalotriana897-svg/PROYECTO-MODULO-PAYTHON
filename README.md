@@ -9,6 +9,7 @@ Permite agregar productos y visualizar la lista mediante un menú interactivo.
 
 Aplicar los conceptos vistos en clase:
 * Pilas
+* diccionarios
 * Variables
 * Listas
 * Funciones (`def`)
@@ -18,10 +19,11 @@ Aplicar los conceptos vistos en clase:
 ## 🛠️ Funcionalidades actuales
 
 * Agregar productos
+  
 * Ver productos
+  
 * deshacer ultima accion
-* listas de productos
-* diccionarios
+  
 * Salir del programa
 
 ## 📚 Tecnologías utilizadas
