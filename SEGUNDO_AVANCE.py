@@ -1,10 +1,12 @@
 productos = productos = [
-    {"nombre": "manzana", "precio": 10.0, "cantidad": 5},
-    {"nombre": "leche", "precio": 22.5, "cantidad": 10},
-    {"nombre": "pan", "precio": 8.0, "cantidad": 15},
-    {"nombre": "huevo", "precio": 30.0, "cantidad": 12},
-    {"nombre": "arroz", "precio": 18.0, "cantidad": 20}
+    {"nombre": "Laptop", "precio": 12000, "cantidad": 20},
+    {"nombre": "Mouse", "precio": 250, "cantidad": 50},
+    {"nombre": "Teclado", "precio": 800, "cantidad": 30},
+    {"nombre": "Monitor", "precio": 2500, "cantidad": 100},
+    {"nombre": "Impresora", "precio": 3500, "cantidad": 70}
 ]
+
+historial = []
 
 
 def mostrar_menu():
@@ -19,41 +21,52 @@ def agregar_producto():
     precio = float(input("Ingrese el precio: "))
     cantidad = int(input("Ingrese la cantidad: "))
 
-    producto = {
-        "nombre": nombre,
-        "precio": precio,
-        "cantidad": cantidad
-    }
+    producto = {"nombre": nombre, "precio": precio,  "cantidad": cantidad, }
+    producto.append(producto)
+    historial.append(("agregar", producto))
+
+    print("producto agegado")
 
     productos.append(producto)
     print("Producto agregado correctamente")
 
 
 def ver_productos():
-    if len(productos) == 0:
-        print("No hay productos en el almacén")
-    else:
-        print("\nProductos en almacén:")
-        for p in productos:
-            print("------------------")
-            print("Nombre:", p["nombre"])
-            print("Precio:", p["precio"])
-            print("Cantidad:", p["cantidad"])
+    if not productos:
+        print("No hay productos")
+        return
+
+    for p in productos:
+        print(p["nombre"], "|", p["precio"], "|", p["cantidad"])
+
+
+def deshacer():
+    if not historial:
+        print("No hay acciones para desahacer")
+        return
+    accion, dato = historial.pop()
+
+    if accion == "Agregar":
+
+        if dato in productos:
+            productos.remove(dato)
+            print("se deshizo:",  dato[nombre])
+
+        else:
+            print("no se pudo  deshacer (No encontrado)")
 
 
 while True:
+
     mostrar_menu()
-    opcion = input("Seleccione una opción: ")
-
-    if opcion == "1":
+    op = input("opcion:")
+    if op == "1":
         agregar_producto()
-
-    elif opcion == "2":
+    elif op == "2":
         ver_productos()
-
-    elif opcion == "3":
-        print("Saliendo del sistema...")
+    elif op == "3":
+        deshacer()
+    elif op == "4":
         break
-
     else:
-        print("Opción no válida")
+        print("Opción inválida")
