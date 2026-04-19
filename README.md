@@ -18,8 +18,10 @@ Aplicar los conceptos vistos en clase:
 ## 🛠️ Funcionalidades actuales
 
 * Agregar productos
-* Ver lista de productos
-* Menú interactivo
+* Ver productos
+* deshacer ultima accion
+* listas de productos
+* diccionarios
 * Salir del programa
 
 ## 📚 Tecnologías utilizadas
